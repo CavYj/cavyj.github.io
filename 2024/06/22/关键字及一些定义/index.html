@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KingJun || </title>
+    <title>KingJun || Java一些特性</title>
     <meta name="author" content="杨钧">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -165,152 +165,86 @@
                 </div>
 
                 <div id="main">
-                    
-<div id="archives">
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2024/6/23" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2024/6/23</div>
-                <a href="/2024/06/23/测试一下/">
-                    <h3>测试一下</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/随笔">
-                            <span class="icon"><a-icon type="book" theme="filled" /></span>
-                            随笔
-                        </a>
-                    </span>
-                    
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1>Java一些特性 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2024/6/22
+        </span>
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/随笔" style=color:#879cff>
-                                随笔
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2024/6/22" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2024/6/22</div>
-                <a href="/2024/06/22/关键字及一些定义/">
-                    <h3>Java一些特性</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/Java">
-                            <span class="icon"><a-icon type="book" theme="filled" /></span>
-                            Java
-                        </a>
-                    </span>
-                    
+        
+        <span class="category">
+            <a href="/categories/Java">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" />
+                </span>
+                Java
+            </a>
+        </span>
+        
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/关键字" style=color:#879cff>
-                                关键字
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2024/6/19" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2024/6/19</div>
-                <a href="/2024/06/19/JVM虚拟机/">
-                    <h3>JVM虚拟机</h3>
-                </a>
-                <div class="info">
-                    
-                    <span class="category">
-                        <a href="/categories/Java">
-                            <span class="icon"><a-icon type="book" theme="filled" /></span>
-                            Java
-                        </a>
-                    </span>
-                    
+        
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/虚拟机" style=color:#1bccbc>
-                                虚拟机
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
-    
-    <a-timeline>
-        <a-timeline-item timestamp="2024/6/15" placement="top" color="#a5c2f5">
-            <a-card hoverable>
-                <div class="item-time">2024/6/15</div>
-                <a href="/2024/06/15/我的博客/">
-                    <h3>我的博客</h3>
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/关键字" style=color:#1bccbc>
+                    关键字
                 </a>
-                <div class="info">
-                    
+            </span>
+            
+        </span>
+        
+    </div>
 
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <a-icon type="tags" />
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/随笔" style=color:#879cff>
-                                随笔
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </a-card>
-        </a-timeline-item>
-    </a-timeline>
+    <div class="content" v-pre>
+        <h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><p>封装、继承、多态</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>1、基本数据类型（8种）</p>
+<p>2、引用类型（数组、枚举、集合。。。）</p>
+<h3 id="重写和重载"><a href="#重写和重载" class="headerlink" title="重写和重载"></a>重写和重载</h3><p>一、重写是子类对父类内容的修改，方法名参数列表都与父类保持一致。</p>
+<p>二、重载（Overloading）是指在同一个类中，可以定义多个方法，它们具有相同的名称但参数列表不同的特性。</p>
+<p>三、重载的特点：</p>
+<ol>
+<li>方法名相同。</li>
+<li>方法参数列表不同：参数的类型、个数、顺序至少有一项不同。</li>
+<li>方法返回类型可以不同，但不能仅仅通过返回类型来区分方法的重载。</li>
+</ol>
+<p>四、重载是编译期多态，重写是运行时多态。</p>
+<h3 id="super"><a href="#super" class="headerlink" title="super()"></a>super()</h3><p>1、<code>super()</code>是用来调用父类构造函数的关键字</p>
+<p>2、当子类构造函数中没有显式调用<code>super()</code>时，Java编译器会默认在子类构造函数的第一行插入一个无参的<code>super()</code>调用，以调用父类的无参构造函数。</p>
+<p>3、如果父类没有无参构造函数，而是有参数的构造函数，那么在子类的构造函数中必须显式地使用<code>super(参数列表)</code>来调用父类的有参构造函数，并传入合适的参数列表。</p>
+<p>4、因为每个类都必须初始化其直接父类部分，以确保对象的完整性。因此，即使在子类构造方法中没有显式调用 <code>super()</code>，编译器仍会自动在子类构造方法的第一行插入对父类构造方法的调用，以确保父类部分的正确初始化。</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>1、this.属性名字</p>
+<p>​	指的是访问类中的成员变量，用来区分成员变量和局部变量（重名问题）。</p>
+<p>2、this.方法名称</p>
+<p>​	用来访问本类的成员方法。</p>
+<p>3、this()</p>
+<p>​	访问本类的构造函数，（）中可以有参数，若有参数，则是指调用指定的有参构造函数</p>
+<p><strong>this()注意事项：</strong></p>
+<p>1、this()不能使用在普通方法中，只能写在构造方法中</p>
+<p>2、必须是构造方法中的第一条语句</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h2 id="和equals"><a href="#和equals" class="headerlink" title="&#x3D;&#x3D;和equals()"></a>&#x3D;&#x3D;和equals()</h2>
+    </div>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
+        </div>
+    </div>
     
 </div>
-
                      
 <footer id="footer">
     <div class="footer-wrap">
@@ -373,6 +307,21 @@
             }
         }
     })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'en',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
 </script>
 
 </body>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KingJun || </title>
+    <title>KingJun || JVM虚拟机</title>
     <meta name="author" content="杨钧">
     <meta name="description" content=" ">
     <meta name="keywords" content=" ">
@@ -165,200 +165,13 @@
                 </div>
 
                 <div id="main">
-                    <div id="home-head" style=background-image:url('home1.jpeg')>
-    <script>
-        var menu = document.getElementById("menu")
-        menu.className += " menu-color"
-    </script>
-     
-    <div id="home-info" class="home-info" @click="home_click">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>KingJun</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
+                     
+<link rel="stylesheet" href="/css/post-body.css">
+<div class="article">
+    <div>
+        <h1>JVM虚拟机 </h1>
     </div>
-     
-</div>
-
-
-
-<div id="home-posts-wrap" class=>
-    <div id="home-posts">
-
-        <div id="posts">
-            
-
-<div class="post">
-
-    <a href="/2024/06/23/测试一下/">
-        <h2>
-            测试一下
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/随笔">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                随笔
-            </a>
-        </span>
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/23
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>测试测试</p>
-
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/随笔" style=color:#ffa2c4>
-                随笔
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/23/测试一下/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/22/关键字及一些定义/">
-        <h2>
-            Java一些特性
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/Java">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                Java
-            </a>
-        </span>
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/22
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><p>封装、继承、多态</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>1、基本数据类型（8种）</p>
-<p>2、引用类型（数组、枚举、集合。。。）</p>
-<h3 id="重写和重载"><a href="#重写和重载" class="headerlink" title="重写和重载"></a>重写和重载</h3><p>一、重写是子类对父类内容的修改，方法名参数列表都与父类保持一致。</p>
-<p>二、重载（Overloading）是指在同一个类中，可以定义多个方法，它们具有相同的名称但参数列表不同的特性。</p>
-<p>三、重载的特点：</p>
-<ol>
-<li>方法名相同。</li>
-<li>方法参数列表不同：参数的类型、个数、顺序至少有一项不同。</li>
-<li>方法返回类型可以不同，但不能仅仅通过返回类型来区分方法的重载。</li>
-</ol>
-<p>四、重载是编译期多态，重写是运行时多态。</p>
-<h3 id="super"><a href="#super" class="headerlink" title="super()"></a>super()</h3><p>1、<code>super()</code>是用来调用父类构造函数的关键字</p>
-<p>2、当子类构造函数中没有显式调用<code>super()</code>时，Java编译器会默认在子类构造函数的第一行插入一个无参的<code>super()</code>调用，以调用父类的无参构造函数。</p>
-<p>3、如果父类没有无参构造函数，而是有参数的构造函数，那么在子类的构造函数中必须显式地使用<code>super(参数列表)</code>来调用父类的有参构造函数，并传入合适的参数列表。</p>
-<p>4、因为每个类都必须初始化其直接父类部分，以确保对象的完整性。因此，即使在子类构造方法中没有显式调用 <code>super()</code>，编译器仍会自动在子类构造方法的第一行插入对父类构造方法的调用，以确保父类部分的正确初始化。</p>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>1、this.属性名字</p>
-<p>​	指的是访问类中的成员变量，用来区分成员变量和局部变量（重名问题）。</p>
-<p>2、this.方法名称</p>
-<p>​	用来访问本类的成员方法。</p>
-<p>3、this()</p>
-<p>​	访问本类的构造函数，（）中可以有参数，若有参数，则是指调用指定的有参构造函数</p>
-<p><strong>this()注意事项：</strong></p>
-<p>1、this()不能使用在普通方法中，只能写在构造方法中</p>
-<p>2、必须是构造方法中的第一条语句</p>
-<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h2 id="和equals"><a href="#和equals" class="headerlink" title="&#x3D;&#x3D;和equals()"></a>&#x3D;&#x3D;和equals()</h2>
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/关键字" style=color:#879cff>
-                关键字
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/22/关键字及一些定义/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/19/JVM虚拟机/">
-        <h2>
-            JVM虚拟机
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/Java">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                Java
-            </a>
-        </span>
-        
-
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <a-icon type="calendar" theme="filled" />
@@ -366,13 +179,37 @@
             2024/6/19
         </span>
 
+        
+        <span class="category">
+            <a href="/categories/Java">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" />
+                </span>
+                Java
+            </a>
+        </span>
+        
+
+        
+
+        <span class="tags">
+            <span class="icon">
+                <a-icon type="tags" theme="filled" />
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/虚拟机" style=color:#ffa2c4>
+                    虚拟机
+                </a>
+            </span>
+            
+        </span>
+        
     </div>
 
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>看视频：狂神说java</p>
+    <div class="content" v-pre>
+        <p>看视频：狂神说java</p>
 <p>博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43122090/article/details/105093777?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171168818216800225578834%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171168818216800225578834&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105093777-null-null.142%5Ev100%5Epc_search_result_base5&utm_term=jvm&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_43122090&#x2F;article&#x2F;details&#x2F;105093777?ops_request_misc&#x3D;%257B%2522request%255Fid%2522%253A%2522171168818216800225578834%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id&#x3D;171168818216800225578834&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>top_positive~default-1-105093777-null-null.142^v100^pc_search_result_base5&amp;utm_term&#x3D;jvm&amp;spm&#x3D;1018.2226.3001.4187</a></p>
 <p><a target="_blank" rel="noopener" href="http://t.csdnimg.cn/yd7B9">http://t.csdnimg.cn/yd7B9</a></p>
 <h2 id="JVM种类-了解"><a href="#JVM种类-了解" class="headerlink" title="JVM种类(了解)"></a>JVM种类(了解)</h2><p>1、Sun公司<code>hotspot</code>（主流） （我们学习的都是基于这个）</p>
@@ -474,174 +311,13 @@
 
 
 <h2 id="JMM-Java-Memory-Model"><a href="#JMM-Java-Memory-Model" class="headerlink" title="JMM: Java Memory Model"></a>JMM: Java Memory Model</h2><h2 id="java四大引用"><a href="#java四大引用" class="headerlink" title="java四大引用"></a>java四大引用</h2><h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2>
-            
-        </div>
     </div>
 
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/虚拟机" style=color:#00bcd4>
-                虚拟机
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/19/JVM虚拟机/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/15/我的博客/">
-        <h2>
-            我的博客
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/15
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>2024-06-23</p>
-<p>搭建新的博客网站</p>
-<p>上一次搭建还是在大三～</p>
-
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/随笔" style=color:#ff7d73>
-                随笔
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/15/我的博客/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-
-             
-<div class="page-current">
-
-    <div class="prev">
-        
-    </div>
-
-    <div class="page-index">
-
-        
-
-        <span class="current">
-            1
-        </span>
-
-        
-
-    </div>
-
-    <div class="next">
-        
-    </div>
-
-</div>
-
-        </div>
-    </div>
     
-    <div id="home-card">
-        <a-affix :offset-top="card_top">
-    <a-card class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="image/avatar.png " alt="头像">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comment">
+        <div id="gitalk-container">
         </div>
-        <div class="name">
-            杨钧
-        </div>
-        <div class="descriptions">
-            
-            <div class="description">
-                道阻且长
-            </div>
-            
-            <div class="description">
-                行则将至
-            </div>
-            
-        </div>
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/korilin">
-
-                    
-                    <a-icon type="github"
-                        theme="filled" />
-                    
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://twitter.com/korilin_dev">
-
-                    
-                    <a-icon type="twitter"
-                        theme="" />
-                    
-                </a>
-            </span>
-            
-        </div>
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                    英文技术博客
-                </a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://jp.korilin.com">
-                    日语记录博客
-                </a>
-            </div>
-            
-        </div>
-    </a-card>
-</a-affix>
     </div>
     
 </div>
@@ -707,6 +383,21 @@
             }
         }
     })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'hexo-theme-particle',      // The repository of store comments,
+        owner: 'korilin',
+        admin: ['korilin'],
+        language: 'en',
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: true  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
 </script>
 
 </body>

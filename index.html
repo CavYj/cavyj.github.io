@@ -1,714 +1,251 @@
-
-<!DOCTYPE html>
-<html lang="en ">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KingJun || </title>
-    <meta name="author" content="杨钧">
-    <meta name="description" content=" ">
-    <meta name="keywords" content=" ">
-    <link rel="icon" href="/image/avatar.png">
-    <link rel="stylesheet" href="/css/antd.min.css">
-    
-    <link rel="stylesheet" href="/css/maiden-theme.css">
-    
-    <script src="/js/vue.js"></script>
-    <script src="/js/antd.min.js"></script>
-<meta name="generator" content="Hexo 7.2.0"></head>
-
-<body>
-
-    <div id="loading"
-        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
-        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div
-            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
-            <div id="loadcontent"
-                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
-                <div>
-                    <h2>LOADING...</h2>
-                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
-                    <div>
-                        <img src="/dancingkitty.gif" alt="loading">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="layout">
-        <transition name="into">
-            <div v-show="show_page" style="display: none;">
-                <div id="menu_show">
-                     
-<nav id="menu">
-    <div class="desktop-menu">
-        <a href="/">
-            <span class="title">KingJun</span>
-        </a>
-        
-        <a href="/">
-            <span>
-                <a-icon type="home" theme="filled" />
-            </span>
-            <span>home</span>
-        </a>
-        
-        <a href="/about">
-            <span>
-                <a-icon type="idcard" theme="filled" />
-            </span>
-            <span>about</span>
-        </a>
-        
-        <a href="/archives">
-            <span>
-                <a-icon type="folder" theme="filled" />
-            </span>
-            <span>archives</span>
-        </a>
-        
-        <a href="/categories/随笔/">
-            <span>
-                <a-icon type="book" theme="filled" />
-            </span>
-            <span>categories</span>
-        </a>
-        
-        <a href="/tags/随笔/">
-            <span>
-                <a-icon type="tags" theme="filled" />
-            </span>
-            <span>tags</span>
-        </a>
-        
-        <a target="_blank" rel="noopener" href="https://en.korilin.com">
-            <span>
-                <a-icon type="compass" theme="filled" />
-            </span>
-            <span>英文博客</span>
-        </a>
-        
-    </div>
-
-    <div :class="'phone-menu ' + menu_show" id="phone-menu">
-        <div :class="'title'" @click="menu_show=!menu_show">
-            <span style="margin-right: 10px;">
-                <a-icon type="appstore" theme="filled" />
-            </span>
-            <span>KingJun</span>
-        </div>
-        <div class="items" v-show="menu_show">
-            
-            <a href="/">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="home" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
-                </div>
-            </a>
-            
-            <a href="/about">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="idcard" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
-                </div>
-            </a>
-            
-            <a href="/archives">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="folder" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
-                </div>
-            </a>
-            
-            <a href="/categories/随笔/">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="book" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
-                </div>
-            </a>
-            
-            <a href="/tags/随笔/">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="tags" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
-                </div>
-            </a>
-            
-            <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="compass" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">英文博客</div>
-                </div>
-            </a>
-            
-        </div>
-        <div class="curtain" v-show="menu_show"></div>
-    </div>
-
-</nav>
-                </div>
-
-                <div id="main">
-                    <div id="home-head" style=background-image:url('home1.jpeg')>
-    <script>
-        var menu = document.getElementById("menu")
-        menu.className += " menu-color"
-    </script>
-     
-    <div id="home-info" class="home-info" @click="home_click">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>KingJun</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-     
-</div>
-
-
-
-<div id="home-posts-wrap" class=>
-    <div id="home-posts">
-
-        <div id="posts">
-            
-
-<div class="post">
-
-    <a href="/2024/06/23/测试一下/">
-        <h2>
-            测试一下
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/随笔">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                随笔
-            </a>
-        </span>
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/23
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>测试测试</p>
-
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/随笔" style=color:#ffa2c4>
-                随笔
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/23/测试一下/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/22/关键字及一些定义/">
-        <h2>
-            Java一些特性
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/Java">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                Java
-            </a>
-        </span>
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/22
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><p>封装、继承、多态</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>1、基本数据类型（8种）</p>
-<p>2、引用类型（数组、枚举、集合。。。）</p>
-<h3 id="重写和重载"><a href="#重写和重载" class="headerlink" title="重写和重载"></a>重写和重载</h3><p>一、重写是子类对父类内容的修改，方法名参数列表都与父类保持一致。</p>
-<p>二、重载（Overloading）是指在同一个类中，可以定义多个方法，它们具有相同的名称但参数列表不同的特性。</p>
-<p>三、重载的特点：</p>
-<ol>
-<li>方法名相同。</li>
-<li>方法参数列表不同：参数的类型、个数、顺序至少有一项不同。</li>
-<li>方法返回类型可以不同，但不能仅仅通过返回类型来区分方法的重载。</li>
-</ol>
-<p>四、重载是编译期多态，重写是运行时多态。</p>
-<h3 id="super"><a href="#super" class="headerlink" title="super()"></a>super()</h3><p>1、<code>super()</code>是用来调用父类构造函数的关键字</p>
-<p>2、当子类构造函数中没有显式调用<code>super()</code>时，Java编译器会默认在子类构造函数的第一行插入一个无参的<code>super()</code>调用，以调用父类的无参构造函数。</p>
-<p>3、如果父类没有无参构造函数，而是有参数的构造函数，那么在子类的构造函数中必须显式地使用<code>super(参数列表)</code>来调用父类的有参构造函数，并传入合适的参数列表。</p>
-<p>4、因为每个类都必须初始化其直接父类部分，以确保对象的完整性。因此，即使在子类构造方法中没有显式调用 <code>super()</code>，编译器仍会自动在子类构造方法的第一行插入对父类构造方法的调用，以确保父类部分的正确初始化。</p>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>1、this.属性名字</p>
-<p>​	指的是访问类中的成员变量，用来区分成员变量和局部变量（重名问题）。</p>
-<p>2、this.方法名称</p>
-<p>​	用来访问本类的成员方法。</p>
-<p>3、this()</p>
-<p>​	访问本类的构造函数，（）中可以有参数，若有参数，则是指调用指定的有参构造函数</p>
-<p><strong>this()注意事项：</strong></p>
-<p>1、this()不能使用在普通方法中，只能写在构造方法中</p>
-<p>2、必须是构造方法中的第一条语句</p>
-<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h2 id="和equals"><a href="#和equals" class="headerlink" title="&#x3D;&#x3D;和equals()"></a>&#x3D;&#x3D;和equals()</h2>
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/关键字" style=color:#879cff>
-                关键字
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/22/关键字及一些定义/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/19/JVM虚拟机/">
-        <h2>
-            JVM虚拟机
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-        <span class="category">
-            <a href="/categories/Java">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" /></span>
-                Java
-            </a>
-        </span>
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/19
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>看视频：狂神说java</p>
-<p>博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43122090/article/details/105093777?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171168818216800225578834%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171168818216800225578834&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105093777-null-null.142%5Ev100%5Epc_search_result_base5&utm_term=jvm&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_43122090&#x2F;article&#x2F;details&#x2F;105093777?ops_request_misc&#x3D;%257B%2522request%255Fid%2522%253A%2522171168818216800225578834%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id&#x3D;171168818216800225578834&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>top_positive~default-1-105093777-null-null.142^v100^pc_search_result_base5&amp;utm_term&#x3D;jvm&amp;spm&#x3D;1018.2226.3001.4187</a></p>
-<p><a target="_blank" rel="noopener" href="http://t.csdnimg.cn/yd7B9">http://t.csdnimg.cn/yd7B9</a></p>
-<h2 id="JVM种类-了解"><a href="#JVM种类-了解" class="headerlink" title="JVM种类(了解)"></a>JVM种类(了解)</h2><p>1、Sun公司<code>hotspot</code>（主流） （我们学习的都是基于这个）</p>
-<p>2、BEA <code>jrockit</code></p>
-<p>3、IBM <code>J9vm</code></p>
-<h2 id="JVM运行时数据区"><a href="#JVM运行时数据区" class="headerlink" title="JVM运行时数据区"></a>JVM运行时数据区</h2><p>为了提高运算效率，就对空间进行了不同区域的划分，因为每一片区域都有特定的处理数据方式和内存管理方式。</p>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240402205344582.png" alt="image-20240402205344582" style="zoom:30%;" />
-
-<ul>
-<li>JVM的内存划分(可以这么理解：栈负责运行，堆负责存储)</li>
-</ul>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240325105756715.png" alt="image-20240325105756715" style="zoom:50%;" />
-
-<h4 id="一、方法区"><a href="#一、方法区" class="headerlink" title="一、方法区"></a>一、方法区</h4><p>静态变量、常量、类信息（构造方法、接口定义）、运行时常量池存在方法区，但是实例变量存在堆内存中，与方法区无关。</p>
-<p>（也就是说，static，final，Class，常量池在方法区中，其他与方法区无关）</p>
-<h4 id="二、堆（heap）"><a href="#二、堆（heap）" class="headerlink" title="二、堆（heap）"></a>二、堆（heap）</h4><p>1、一个JVM只有一个堆内存，堆内存的大小是可以调节的，是虚拟机管理的内存最大的一块</p>
-<p>2、类加载器读取了类文件后，一般会把什么东西放到堆中？</p>
-<ul>
-<li>所有的对象实例以及数组都在堆上分配 （此内存区域的唯一目的就是存放对象实例）</li>
-</ul>
-<p>3、堆内存中还要细分为三个区域：（<strong>分区的目的是为了更好的回收和分配内存</strong>）</p>
-<ul>
-<li><p>新生区（伊甸园区，幸存者0区，幸存者1区）</p>
-</li>
-<li><p>养老区</p>
-</li>
-<li><p>永久区（JDK8以后，永久存储区改名为<strong>元空间</strong>）</p>
-<p>永久区：这个区域常驻内存，用来存放jdk自身携带的class对象，interface元数据，存储的是java运行时的一些环境或类信息，这个区域不存在垃圾回收！关闭vm虚拟就会释放这个区域的内存。</p>
-</li>
-</ul>
-<p>4、GC垃圾回收，主要是在伊甸园区和养老区</p>
-<p>5、如果内存满了，报错OOM，堆内存不够：java.lang.outofmemoryerror:java.heap.space</p>
-<p>&#x2F;&#x2F;OOM:</p>
-<ul>
-<li>尝试扩大堆内存看结果</li>
-<li>分析内存，看一下哪个地方出现了问题（借助专业工具JPofiler）</li>
-</ul>
-<p>6、图示：（方法区中的一小块为常量池）</p>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240401095247649.png" alt="image-20240401095247649" style="zoom:50%;" />
-
-<p>7、在项目中出现了oom故障，该如何排除？</p>
-<ul>
-<li>(最快)能够看到第几行出错：内存快照分析工具：MAT,  Jprofiler</li>
-<li>Debug, 一行行分析代码</li>
-</ul>
-<p>8、修改VM Options参数：</p>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240402103855766.png" alt="image-20240402103855766" style="zoom:50%;" />
-
-<p>9、Java堆既可以被实现成固定大小的，也可以是可扩展的，不过当前主流的java虚拟机都是按照可扩展来实现的（通过参数-Xmx和-Xms设定）</p>
-<h4 id="三、Java虚拟机栈"><a href="#三、Java虚拟机栈" class="headerlink" title="三、Java虚拟机栈"></a>三、Java虚拟机栈</h4><p>1、是线程私有的，生命周期与栈相同。</p>
-<p>2、虚拟机栈描述的是Java方法执行的线程内存模型：每个方法被执行的时候，Java虚拟机都会同步创建一个栈帧[1] (Stack Frame)用于存储局部变量表、操作数栈、动态连接、方法出口等信息。每一个方法被调用直至执行完毕的过程，就对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。</p>
-<p>3、会在栈深度溢出或者栈扩展失败时分别抛出StackOverflowError和OutOfMemoryError异常。</p>
-<h4 id="四、本地方法栈"><a href="#四、本地方法栈" class="headerlink" title="四、本地方法栈"></a>四、本地方法栈</h4><h4 id="Native（唬住面试官）"><a href="#Native（唬住面试官）" class="headerlink" title="Native（唬住面试官）"></a>Native（唬住面试官）</h4><p>1、凡是带了native关键字的，说明java的作用范围达不到了，会去调用底层c语言的库！</p>
-<p>2、会进入本地方法栈。</p>
-<p>3、会调用本地方法接口（JNI）</p>
-<p>4、JNI作用：扩展Java的使用，融合不同的编程语言为JAVA所用！最初：C、C++</p>
-<h4 id="五、程序计数器"><a href="#五、程序计数器" class="headerlink" title="五、程序计数器"></a>五、程序计数器</h4><p>1、每个线程都有一个独立的程序计数器，它是当前线程所执行的字节码的行号指示器。</p>
-<p>2、该内存区域是唯一一个没有规定任何OutOfMemoryError情况的区域。</p>
-<p>3、若线程执行的是本地（native）方法，这个计数器值则为空。</p>
-<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><p><strong>一、作用</strong></p>
-<p><strong>二、双亲委派机制</strong></p>
-<p><strong>步骤</strong></p>
-<p>1、类加载器收到类加载的请求；</p>
-<p>2、将这个请求向上委托给父类加载器去完成，一直向上委托，直到启动类加载器（APP-EXT-BOOT）</p>
-<p>3、启动类加载器肩擦好是否能加载当前类，能加载就结束并使用当前类；否则，抛出异常，通知子加载器进行加载</p>
-<p>4、重复步骤3</p>
-<p>（若都找不到，则报错class not found）</p>
-<p><strong>三、沙箱机制（sandbox）</strong></p>
-<p>1、是什么</p>
-<p>沙箱就是一个限制应用程序对系统资源的访问的运行环境。</p>
-<p>2、应用</p>
-<p>![image-20240329193722938](&#x2F;Users&#x2F;jungoat&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20240329193722938.png)</p>
-<p>3、理解</p>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240329193755113.png" alt="image-20240329193755113" style="zoom:50%;" />
-
-<p>就像上面这个图一样,有两个正方形,相互是独立的,里面各自装着应用,第一个正方形里的应用和第二个正方形的应用互不影响</p>
-<h2 id="垃圾回收（GC）"><a href="#垃圾回收（GC）" class="headerlink" title="垃圾回收（GC）"></a>垃圾回收（GC）</h2><p>1、gc的作用区域只有堆和方法区</p>
-<p>2、Jvm在进行gc时，并不是对三个区域统一回收，大部分时候都是回收新生代</p>
-<ul>
-<li>新生代</li>
-<li>幸存区（form, to（谁空谁是to））</li>
-<li>老年区</li>
-</ul>
-<p>3、gc两种：轻cg（普通gc），重gc(全局gc)</p>
-<p>4、gc算法：</p>
-<p>(对象存活判定算法：1、引用计数法 2、可达性分析法)</p>
-<p>(垃圾收集算法（分代收集理论）：1、标记-清除算法 2、标记-复制算法 3、标记-整理算法)</p>
-<p><strong>（gc分代收集理论）</strong></p>
-<ul>
-<li>复制算法(新生代，所以幸存区会有一个空的)</li>
-<li>标记清除算法<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240402111333201.png" alt="image-20240402111333201" style="zoom:50%;" /></li>
-<li>标记压缩算法（防止内存碎片产生）</li>
-<li>标记清除压缩算法</li>
-</ul>
-<img src="/Users/jungoat/Library/Application Support/typora-user-images/image-20240402112320606.png" alt="image-20240402112320606" style="zoom:50%;" />
-
-
-
-
-
-<h2 id="JMM-Java-Memory-Model"><a href="#JMM-Java-Memory-Model" class="headerlink" title="JMM: Java Memory Model"></a>JMM: Java Memory Model</h2><h2 id="java四大引用"><a href="#java四大引用" class="headerlink" title="java四大引用"></a>java四大引用</h2><h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2>
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/虚拟机" style=color:#00bcd4>
-                虚拟机
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/19/JVM虚拟机/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-<div class="post">
-
-    <a href="/2024/06/15/我的博客/">
-        <h2>
-            我的博客
-        </h2>
-    </a>
-
-    <div class="category-and-date">
-
-        
-
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2024/6/15
-        </span>
-
-    </div>
-
-    <div class="excerpt">
-        <div class="content" v-pre>
-            
-            
-            <p>2024-06-23</p>
-<p>搭建新的博客网站</p>
-<p>上一次搭建还是在大三～</p>
-
-            
-        </div>
-    </div>
-
-    <div class="post-tags">
-        
-        <span class="icon">
-            <a-icon type="tags" theme="filled" />
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/随笔" style=color:#ff7d73>
-                随笔
-            </a>
-        </span>
-        
-    </div>
-
-    <a href="/2024/06/15/我的博客/ " class="go-post">
-        阅读全文
-    </a>
-</div>
-
-
-             
-<div class="page-current">
-
-    <div class="prev">
-        
-    </div>
-
-    <div class="page-index">
-
-        
-
-        <span class="current">
-            1
-        </span>
-
-        
-
-    </div>
-
-    <div class="next">
-        
-    </div>
-
-</div>
-
-        </div>
-    </div>
-    
-    <div id="home-card">
-        <a-affix :offset-top="card_top">
-    <a-card class="card-style" style="width: 300px">
-        <div class="avatar">
-            <img src="image/avatar.png " alt="头像">
-        </div>
-        <div class="name">
-            杨钧
-        </div>
-        <div class="descriptions">
-            
-            <div class="description">
-                道阻且长
-            </div>
-            
-            <div class="description">
-                行则将至
-            </div>
-            
-        </div>
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/korilin">
-
-                    
-                    <a-icon type="github"
-                        theme="filled" />
-                    
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://twitter.com/korilin_dev">
-
-                    
-                    <a-icon type="twitter"
-                        theme="" />
-                    
-                </a>
-            </span>
-            
-        </div>
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                    英文技术博客
-                </a>
-            </div>
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://jp.korilin.com">
-                    日语记录博客
-                </a>
-            </div>
-            
-        </div>
-    </a-card>
-</a-affix>
-    </div>
-    
-</div>
-                     
-<footer id="footer">
-    <div class="footer-wrap">
-        <div>
-            © 2024 - 2024 KingJun
-            <span class="footer-icon">
-                <a-icon type="flag" theme="filled" /></span>
-            @杨钧
-        </div>
-        <div></div>
-        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
-                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
-        
-    </div>
-
-</footer>
-
-<script src="/js/highlight.min.js"></script>
-<script src="/js/particle.js"></script>
-                </div>
-            </div>
-        </transition>
-    </div>
-
-    <script>
-    new Vue({
-        el: "#layout",
-        data: {
-            show_page: false,
-            onload_menu: false,
-            menu_show: false,
-            card_top: 100
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>KingJun</title><meta name="author" content="杨钧"><meta name="copyright" content="杨钧"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="KingJun">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="KingJun">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:author" content="杨钧">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.14.0-b3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>(()=>{
+      const saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
         },
-        created: function () {
-            var that = this
-            window.onload = function () {
-                that.show_page = true
-                document.getElementById("loadcontent").style.opacity = 0
-                setTimeout(function () {
-                    document.getElementById("loadleft").style.width = 0
-                    document.getElementById("loadright").style.width = 0
-                }, 300)
-                setTimeout(function () {
-                    document.getElementById("loading").style = "display:none"
-                }, 600)
-            }
-        },
-        mounted: function () {
-            var that = this
-            window.addEventListener('scroll', function (e) {
-                that.menu_show = false
-            })
-        },
-        methods: {
-            home_click: function () {
-                window.scrollTo({
-                    top: window.innerHeight - 80,
-                    behavior: "smooth",
-                });
-            }
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
+      }
+      
+      window.btf = {
+        saveToLocal: saveToLocal,
+        getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+          script.src = url
+          script.async = true
+          script.onerror = reject
+          script.onload = script.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            script.onload = script.onreadystatechange = null
+            resolve()
+          }
+
+          Object.keys(attr).forEach(key => {
+            script.setAttribute(key, attr[key])
+          })
+
+          document.head.appendChild(script)
+        }),
+
+        getCSS: (url, id = false) => new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+          link.rel = 'stylesheet'
+          link.href = url
+          if (id) link.id = id
+          link.onerror = reject
+          link.onload = link.onreadystatechange = function() {
+            const loadState = this.readyState
+            if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+            link.onload = link.onreadystatechange = null
+            resolve()
+          }
+          document.head.appendChild(link)
+        }),
+
+        addGlobalFn: (key, fn, name = false, parent = window) => {
+          const pjaxEnable = false
+          if (!pjaxEnable && key.startsWith('pjax')) return
+
+          const globalFn = parent.globalFn || {}
+          const keyObj = globalFn[key] || {}
+    
+          if (name && keyObj[name]) return
+    
+          name = name || Object.keys(keyObj).length
+          keyObj[name] = fn
+          globalFn[key] = keyObj
+          parent.globalFn = globalFn
+        }
+      }
+    
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+      
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })()</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'KingJun',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-06-23 23:24:11'
+}</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/home1.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="KingJun"><span class="site-name">KingJun</span></a></span><div id="menus"><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">KingJun</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/23/%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B/" title="测试一下">测试一下</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-23T11:56:25.000Z" title="Created 2024-06-23 19:56:25">2024-06-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">测试测试
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/22/%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89/" title="Java一些特性">Java一些特性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-22T11:56:25.000Z" title="Created 2024-06-22 19:56:25">2024-06-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">三大特性封装、继承、多态
+数据类型1、基本数据类型（8种）
+2、引用类型（数组、枚举、集合。。。）
+重写和重载一、重写是子类对父类内容的修改，方法名参数列表都与父类保持一致。
+二、重载（Overloading）是指在同一个类中，可以定义多个方法，它们具有相同的名称但参数列表不同的特性。
+三、重载的特点：
+
+方法名相同。
+方法参数列表不同：参数的类型、个数、顺序至少有一项不同。
+方法返回类型可以不同，但不能仅仅通过返回类型来区分方法的重载。
+
+四、重载是编译期多态，重写是运行时多态。
+super()1、super()是用来调用父类构造函数的关键字
+2、当子类构造函数中没有显式调用super()时，Java编译器会默认在子类构造函数的第一行插入一个无参的super()调用，以调用父类的无参构造函数。
+3、如果父类没有无参构造函数，而是有参数的构造函数，那么在子类的构造函数中必须显式地使用super(参数列表)来调用父类的有参构造函数，并传入合适的参数列表。
+4、因为每个类都必须初始化其直接父类部分，以确保对象的完整性。因此，即使在子类构造方法中没有显式调用 super()，编译器仍会自动在 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/19/JVM%E8%99%9A%E6%8B%9F%E6%9C%BA/" title="JVM虚拟机">JVM虚拟机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-19T11:56:25.000Z" title="Created 2024-06-19 19:56:25">2024-06-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Java/">Java</a></span></div><div class="content">看视频：狂神说java
+博客：https://blog.csdn.net/weixin_43122090&#x2F;article&#x2F;details&#x2F;105093777?ops_request_misc&#x3D;%257B%2522request%255Fid%2522%253A%2522171168818216800225578834%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id&#x3D;171168818216800225578834&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2alltop_positive~default-1-105093777-null-null.142^v100^pc_search_result_base5&amp;utm_term&#x3D;jvm&amp;spm&#x3D;1018.2226.3001.41 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/15/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="我的博客">我的博客</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-06-15T11:38:42.000Z" title="Created 2024-06-15 19:38:42">2024-06-15</time></span></div><div class="content">2024-06-23
+搭建新的博客网站
+上一次搭建还是在大三～
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">杨钧</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/23/%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B/" title="测试一下">测试一下</a><time datetime="2024-06-23T11:56:25.000Z" title="Created 2024-06-23 19:56:25">2024-06-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/22/%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%AE%9A%E4%B9%89/" title="Java一些特性">Java一些特性</a><time datetime="2024-06-22T11:56:25.000Z" title="Created 2024-06-22 19:56:25">2024-06-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/19/JVM%E8%99%9A%E6%8B%9F%E6%9C%BA/" title="JVM虚拟机">JVM虚拟机</a><time datetime="2024-06-19T11:56:25.000Z" title="Created 2024-06-19 19:56:25">2024-06-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/15/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" title="我的博客">我的博客</a><time datetime="2024-06-15T11:38:42.000Z" title="Created 2024-06-15 19:38:42">2024-06-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 1.1em; color: #999">关键字</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 1.5em; color: #99a9bf">随笔</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 1.1em; color: #999">虚拟机</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">June 2024</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">4</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-06-23T15:24:11.285Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By 杨钧</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.14.0-b3"></script><script src="/js/main.js?v=4.14.0-b3"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.35/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = (ele) => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from(ele).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
     })
-</script>
+  }
 
-</body>
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+    
+    codeMermaidEle.forEach(ele => {
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.innerHTML = `<pre class="mermaid-src" hidden>${ele.textContent}</pre>`
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
 
-</html>
+  const loadMermaid = () => {
+    if (false) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js').then(runMermaidFn)
+  }
+  
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
